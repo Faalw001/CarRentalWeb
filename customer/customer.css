@@ -1,0 +1,11 @@
+/* Table */
+.divtable{
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.table{
+    background-color: rgb(255, 236, 184);
+    border-radius: 6px;
+    border-color: black;
+    
+}

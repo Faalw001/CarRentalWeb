@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="/car/car.js"></script>
+    
+    <script src="/keycloak-js-adapter-npm-dist-20.0.3/dist/keycloak.js"></script>
+
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="/car/car.css" />
+    <link rel="stylesheet" href="/fontawesome-free-6.2.0-web/css/all.css" />
+  </head>
+
+  <body>
+    <div class="div1">
+      <!-- Popup form -->
+      <div class="box">
+        <a class="button button" href="#popup1" style="text-decoration: none"
+          >Create Car</a
+        >
+        <a class="button button" href="#popup2" style="text-decoration: none"
+          >Delete Car</a
+        >
+        <a class="button button" href="#popup3" style="text-decoration: none"
+          >Update Car</a
+        >
+      </div>
+      <!-- FORM CREATE-->
+      <div id="popup1" class="overlay">
+        <div class="popup container">
+          <h2 class="text">Create Car</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Provide the information for the car you want created.
+          </div>
+
+          <div>
+            <form class="form">
+              <label class="lable">Car Name</label><br />
+              <input id="cn" type="text" placeholder="CarName" /><br />
+              <label class="lable">Type/Model</label><br />
+              <input id="cm" type="text" placeholder="CarModel" /><br />
+              <label class="lable">Price</label><br />
+              <input id="cp" type="number" placeholder="PricePerDay" />
+            </form>
+            <br />
+            <a class="button button3"  style="text-decoration: none" href="#done"  onclick="postcar()">Submit</a>
+          </div>
+        </div>
+      </div>
+      <!-- FORM DELETE-->
+      <div id="popup2" class="overlay">
+        <div class="popup container">
+          <h2 class="text">Delete Car</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Provide the id for the car you want deleted.
+          </div>
+          <div id="deleteCarForm">
+            <form class="form">
+              <label class="lable">Car ID</label><br /><input
+                id="cdId"
+                type="text"
+              />
+            </form>
+            <br />
+            <a class="button button5"style="text-decoration: none" href="#sure?" >Delete Car</a>
+          </div>
+        </div>
+      </div>
+      <!-- FORM UPDATE-->
+      <div id="popup3" class="overlay">
+        <div class="popup container">
+          <h2 class="text">Update Car</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            Provide the Id for the car and information you want to update.
+          </div>
+
+          <div>
+            <form class="form">
+              <label class="lable">Car ID</label><br /><input
+                id="ucId"
+                type="text"
+              />
+              <label class="lable">Car Name</label><br />
+              <input id="ucn" type="text" /><br />
+              <label class="lable">Type/Model</label><br />
+              <input id="ucm" type="text" /><br />
+              <label class="lable">Price per day</label><br />
+              <input id="ucp" type="number" />
+            </form>
+            <br />
+            <a class="button button3" style="text-decoration: none" href="#done2" onclick="putCar()">Update</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="done2" class="overlay">
+        <div class="popup container">
+          <h2 class="text">Car is Updated</h2>
+          <a class="close" href="#">x</a>
+        </div>
+      </div>
+    </div>
+    <div id="sure?" class="overlay">
+      <div class="popup container">
+        <h2 class="text">Are you sure?</h2>
+        <a class=" button button2 no" href="#">No</a>
+        <a class="button button5"style="text-decoration: none" href="#done1"  onclick="deleteCarBookings()">Yes</a>
+      </div>
+    </div>
+    <div id="done1" class="overlay">
+      <div class="popup container">
+        <h2 class="text">Car is Deleted</h2>
+        <a class="close" href="#">x</a>
+      </div>
+    </div>
+  </div>
+  <div id="done" class="overlay">
+    <div class="popup container">
+      <h2 class="text">Car is Created</h2>
+      <a class="close" href="#">x</a>
+    </div>
+  </div>
+</div>
+      <!-- Table -->
+      <div class="divtable">
+        <table class="table table-sm">
+          <thead>
+            <h1>
+              Table Of Cars
+              <button class="button button4" id="relode">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </h1>
+            <tr>
+              <th scope="col" id="sortId">CarID</th>
+              <th scope="col" id="sortName">Name</th>
+              <th scope="col" id="sortModel">Type/Model</th>
+              <th scope="col" id="sortPrice">Price/Day(sek)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+
+.div1{
+    padding-top: 15px;
+}
+/* Table */
+.divtable{
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.table{
+    background-color: rgb(255, 236, 184);
+    border-radius: 6px;
+    border-color: black;
+    
+}
+/* PopUp form */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .no {
+    text-decoration: none;
+    
+  }
+  .popup .close:hover {
+    color: #81ACA5;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+
+  /*Form*/
+.lable{
+    color: #ddd;
+}
+.form{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family:  sans-serif;
+}
+
+.container{
+  max-width: 300px;
+  min-width: 300px;
+  background:#81ACA5;
+  
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(17, 17, 17, 0.568);
+}
+.container .text{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 650;
+  color: #ffffff;
+}
+/* BUTTONS */
+.button {
+    background-color: #81ACA5;
+    border: none;
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+   
+  }
+  .button:hover {opacity: 80%;}
+  .button2 {background-color: #8D8145;}
+  .button3 {background-color: #01623F;}
+  .button4 {background-color: #F2A53B; border-radius: 20px;}
+  .button5 {background-color: #f2753b;}
